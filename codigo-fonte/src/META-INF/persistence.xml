@@ -1,0 +1,30 @@
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence">
+	<!-- Arquivo de configuração de persistência com o banco de dados -->
+	<persistence-unit name="controlefinancas" transaction-type="RESOURCE_LOCAL">
+		<!-- provider para a spec JPA -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/contasBancarias" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+			<!-- Indica que o Hibernate vai tentar atualizar a base de dados -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!-- Exibe no console a query sql -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- Exibe o sql de forma identada -->
+			<property name="hibernate.format.sql" value="true" />
+			<!-- sintaxe da linguagem -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.timeout" value="300" />
+			<!-- Cache de comandos PL/SQL -->
+			<property name="hibernate.c3p0.max_statements" value="50" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
