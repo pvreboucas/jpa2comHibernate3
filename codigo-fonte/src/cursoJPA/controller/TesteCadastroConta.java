@@ -12,7 +12,7 @@ import cursoJPA.bean.TipoMovto;
 
 public class TesteCadastroConta {
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		
 		EntityManager em = JPAUtil.getEntityManager();
 		
@@ -48,5 +48,5 @@ public class TesteCadastroConta {
 		em.close();
 		
 	}
-
+*/
 }

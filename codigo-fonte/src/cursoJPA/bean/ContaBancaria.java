@@ -1,5 +1,7 @@
 package cursoJPA.bean;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,11 +15,11 @@ public class ContaBancaria {
 	@GeneratedValue
 	private Long id;
 	private String titular;
-	private double saldo;
+	private BigDecimal saldo;
 	
 	@Override
 	public String toString() {
-		return id+" - "+titular;
+		return "Conta: "+id+" - "+titular;
 	}
 	
 	public Long getId() {
@@ -32,10 +34,10 @@ public class ContaBancaria {
 	public void setTitular(String titular) {
 		this.titular = titular;
 	}
-	public double getSaldo() {
+	public BigDecimal getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(double saldo) {
+	public void setSaldo(BigDecimal saldo) {
 		this.saldo = saldo;
 	}
 	

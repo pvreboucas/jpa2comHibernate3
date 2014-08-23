@@ -1,5 +1,6 @@
 package cursoJPA.bean;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
@@ -20,7 +21,7 @@ public class Movimentacao {
 	private ContaBancaria conta;
 	private String descricao;
 	private Calendar data;
-	private double valor;
+	private BigDecimal valor;
 	//busca na classe enum o índice da sequência de enumerados,
 	//porém EnumType retorna o tipo do enumerado
 	@Enumerated(EnumType.STRING)
@@ -28,7 +29,7 @@ public class Movimentacao {
 	
 	@Override
 	public String toString() {
-		return tipo.name();
+		return conta+" - "+"transação: "+id+" - "+tipo.name()+" - "+ descricao+" - "+data+" - "+valor;
 	}
 	
 	public Long getId() {
@@ -55,10 +56,10 @@ public class Movimentacao {
 	public void setData(Calendar data) {
 		this.data = data;
 	}
-	public double getValor() {
+	public BigDecimal getValor() {
 		return valor;
 	}
-	public void setValor(double valor) {
+	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
 	public TipoMovto getTipo() {
