@@ -9,8 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import cursoJPA.controller.TipoMovto;
-
 @Entity
 public class Movimentacao {
 	
@@ -27,6 +25,11 @@ public class Movimentacao {
 	//porém EnumType retorna o tipo do enumerado
 	@Enumerated(EnumType.STRING)
 	private TipoMovto tipo;
+	
+	@Override
+	public String toString() {
+		return tipo.name();
+	}
 	
 	public Long getId() {
 		return id;

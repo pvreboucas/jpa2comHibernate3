@@ -10,7 +10,7 @@ public class MovimentacaoDAO {
 
 	GenericDAO<Movimentacao> dao;
 	
-	MovimentacaoDAO(EntityManager em){
+	public MovimentacaoDAO(EntityManager em){
 		dao = new GenericDAO<Movimentacao>(em, Movimentacao.class);
 	}
 	

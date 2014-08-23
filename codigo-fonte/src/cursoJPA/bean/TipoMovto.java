@@ -1,4 +1,4 @@
-package cursoJPA.controller;
+package cursoJPA.bean;
 
 public enum TipoMovto {
 	
