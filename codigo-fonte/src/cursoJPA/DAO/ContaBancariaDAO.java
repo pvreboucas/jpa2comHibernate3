@@ -24,7 +24,7 @@ public class ContaBancariaDAO {
 	}
 	
 	public void excluir(ContaBancaria conta){
-		dao.excluir(conta);;
+		dao.excluir(conta);
 	}
 	
 	public ContaBancaria consultar(Long id){
