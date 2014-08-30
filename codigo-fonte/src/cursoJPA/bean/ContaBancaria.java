@@ -1,10 +1,13 @@
 package cursoJPA.bean;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class ContaBancaria {
@@ -16,7 +19,9 @@ public class ContaBancaria {
 	private Long id;
 	private String titular;
 	private BigDecimal saldo;
-	
+	@OneToMany(mappedBy="conta")
+	private List<Movimentacao> movimentacoes = new ArrayList<Movimentacao>();
+
 	@Override
 	public String toString() {
 		return "Conta: "+id+" - "+titular;
@@ -37,9 +42,14 @@ public class ContaBancaria {
 	public BigDecimal getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(BigDecimal saldo) {
-		this.saldo = saldo;
+	public void setSaldo(BigDecimal i) {
+		this.saldo = i;
 	}
-	
+	public List<Movimentacao> getMovimentacoes() {
+		return movimentacoes;
+	}
+	public void setMovimentacoes(List<Movimentacao> movimentacoes) {
+		this.movimentacoes = movimentacoes;
+	}
 	
 }

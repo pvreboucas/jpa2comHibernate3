@@ -29,7 +29,7 @@ public class Movimentacao {
 	
 	@Override
 	public String toString() {
-		return conta+" - "+"transação: "+id+" - "+tipo.name()+" - "+ descricao+" - "+data+" - "+valor;
+		return conta.toString()+"\n "+"transação: "+id+" - "+tipo.name()+" - "+ descricao+" - "+data+" - "+valor;
 	}
 	
 	public Long getId() {

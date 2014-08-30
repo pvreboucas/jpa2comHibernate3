@@ -53,15 +53,7 @@ public class MovimentacaoDAO {
 		return query.getResultList();
 	}
 	
-	/*public BigDecimal soma(ContaBancaria conta, TipoMovto tipo){
-		String jpql = "SELECT SUM(m.valor) FROM Movimentacao m WHERE m.conta = :pConta and m.tipo = :pTipo";
-		Query query = em.createQuery(jpql);
-		query.setParameter("pConta", conta);
-		query.setParameter("pTipo", tipo);
-		return (BigDecimal) query.getSingleResult();
-	}*/
-	
-	public BigDecimal soma(ContaBancaria conta, TipoMovto tipo){
+	public BigDecimal calcularTotalMovimento(ContaBancaria conta, TipoMovto tipo){
 		String jpql = "SELECT SUM(m.valor) FROM Movimentacao m WHERE m.conta = :pConta and m.tipo = :pTipo";
 		TypedQuery<BigDecimal> query = em.createQuery(jpql, BigDecimal.class);
 		query.setParameter("pConta", conta);
@@ -79,4 +71,11 @@ public class MovimentacaoDAO {
 		query.setParameter("pTipo", tipo);
 		return query.getResultList();
 		}
+	
+	public List<Movimentacao> listarMovimentacaoPorTitular(String titular){
+		String jpql = "SELECT m FROM Movimentacao m WHERE m.conta.titular = :pTitular";
+		TypedQuery<Movimentacao> query = em.createQuery(jpql, Movimentacao.class);
+		query.setParameter("pTitular", titular);
+		return query.getResultList();
+	}
 }
