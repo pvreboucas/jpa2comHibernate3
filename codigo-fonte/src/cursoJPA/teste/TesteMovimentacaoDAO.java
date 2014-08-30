@@ -43,7 +43,7 @@ public class TesteMovimentacaoDAO {
 		return conta;
 	}
 	
-	/*@Test
+	@Test
 	public void deveListarMovimentacaoPorTitular(){
 		EntityManager em = JPAUtil.getEntityManager();
 		em.getTransaction().begin();		
@@ -53,9 +53,9 @@ public class TesteMovimentacaoDAO {
 		em.getTransaction().commit();
 		System.out.println("Movimentações da "+conta.toString()+": "+lista.toString());
 		em.close();
-	}*/
+	}
 	
-	@Test
+	//@Test
 	public void deveListarMesesComMovimentacao(){
 		EntityManager em = JPAUtil.getEntityManager();
 		
@@ -75,7 +75,7 @@ public class TesteMovimentacaoDAO {
 		em.close();
 	}
 	
-/*	@Test
+	//@Test
 	public void deveCalcularTotalMovimentacao(){
 		
 		EntityManager em = JPAUtil.getEntityManager();
@@ -97,6 +97,6 @@ public class TesteMovimentacaoDAO {
 		System.out.println("Movimentações de Entrada da Conta"+conta.toString()+": "+listaEntrada);
 		System.out.println("Movimentações da Saída da Conta"+conta.toString()+": "+listaSaida);
 		em.close();
-	}*/
+	}
 	
 }
