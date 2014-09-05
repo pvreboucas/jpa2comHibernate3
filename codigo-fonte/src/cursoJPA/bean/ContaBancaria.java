@@ -11,7 +11,8 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class ContaBancaria {
-
+	
+	//meu comentário
 	//@Id seleciona o atributo abaixo da annotation como valor da chave primária
 	@Id
 	//@GeneratedValue define a chave primária como icremental
