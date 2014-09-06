@@ -17,6 +17,12 @@ public class Tag {
 	private String nome;
 	@ManyToMany(mappedBy="tags")
 	private List<Movimentacao> movimentacoes = new ArrayList<Movimentacao>();
+	
+	@Override
+	public String toString() {
+		return this.id+" - "+this.nome;
+	}
+	
 	public Long getId() {
 		return id;
 	}

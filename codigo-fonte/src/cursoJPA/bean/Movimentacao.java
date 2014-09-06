@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -25,7 +26,8 @@ public class Movimentacao {
 	private String descricao;
 	private Calendar data;
 	private BigDecimal valor;
-	@ManyToMany
+	//Usar o Eager não é uma boa prática. Prejudica o desempenho.
+	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Tag> tags = new ArrayList<Tag>();
 	//busca na classe enum o índice da sequência de enumerados,
 	//porém EnumType retorna o tipo do enumerado
@@ -72,6 +74,14 @@ public class Movimentacao {
 	}
 	public void setTipo(TipoMovto tipo) {
 		this.tipo = tipo;
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 	
 
