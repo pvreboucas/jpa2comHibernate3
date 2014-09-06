@@ -11,10 +11,10 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class ContaBancaria {
-
-	//@Id seleciona o atributo abaixo da annotation como valor da chave prim·ria
+	
+	//@Id seleciona o atributo abaixo da annotation como valor da chave prim√°ria
 	@Id
-	//@GeneratedValue define a chave prim·ria como icremental
+	//@GeneratedValue define a chave prim√°ria como icremental
 	@GeneratedValue
 	private Long id;
 	private String titular;
